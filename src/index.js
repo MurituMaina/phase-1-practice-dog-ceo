@@ -64,11 +64,11 @@ function loadBreedOptions() {
 
 function updateBreedList(breeds) {
   let ul = document.getElementById('dog-breeds');
-  removeChildren(ul);
+  removeBreeds(ul);
   breeds.forEach(breed => newBreedList(breed));
 }
 
-function removeChildren(element) {
+function removeBreeds(element) {
   let child = element.lastElementChild;
   while (child) {
     element.removeChild(child);
@@ -76,14 +76,14 @@ function removeChildren(element) {
   }
 }
 
-function selectBreedsStartingWith(letter) {
+function selectBreedStartingWith(letter) {
   updateBreedList(breeds.filter(breed => breed.startsWith(letter)));
 }
 
 function filterBreed() {
   let breedDropdown = document.getElementById('breed-dropdown');
   breedDropdown.addEventListener('change', function (event) {
-    selectBreedsStartingWith(event.target.value);
+    selectBreedStartingWith(event.target.value);
   })}
 
 
